@@ -4,7 +4,7 @@ A simple HTTP API written in Go that simulates Brazilian consumer credit operati
 
 ## Background
 
-This is a simplified, public demo of the loan calculation engine I built and deployed in production at [ZIPDIN](https://zipdin.com.br) — a Brazilian fintech specializing in payroll credit (*Consignado Privado*) and Banking as a Service.
+This is a simplified, public demo of a loan calculation engine I built and deployed in production at a Brazilian fintech specializing in payroll credit (*Consignado Privado*) and Banking as a Service.
 
 The production version runs as an **AWS Lambda function** (Serverless architecture) and is part of a platform that processes **220,000+ contracts/month**. It handles multiple credit products: payroll credit, personal credit (CP), direct consumer credit (CDC), and FGTS credit.
 
@@ -104,7 +104,7 @@ loan-simulator-go/
 
 ## Production architecture (for reference)
 
-The production version at ZIPDIN differs from this demo in the following ways:
+The production version differs from this demo in the following ways:
 
 - Deployed as **AWS Lambda** using AWS SAM (Serverless Application Model)
 - Authenticated via **JWT** tokens
