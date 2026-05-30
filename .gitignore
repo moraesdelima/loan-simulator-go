@@ -1,0 +1,20 @@
+# Build artifacts
+bin/
+*.exe
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local files (not for public)
+.local/
+
+# Temporary files
+/tmp/
+*.pid

@@ -1,0 +1,29 @@
+meta {
+  name: POST /simulate — 24x R$25k @ 1.99%
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/simulate
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "loanValue": 25000,
+    "monthlyRatePct": 1.99,
+    "installments": 24
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.fundedValue: isNumber
+  res.body.yearlyCetPct: isNumber
+}

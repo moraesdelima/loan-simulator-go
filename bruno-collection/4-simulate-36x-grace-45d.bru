@@ -1,0 +1,30 @@
+meta {
+  name: POST /simulate — 36x grace 45d
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/simulate
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "loanValue": 15000,
+    "monthlyRatePct": 2.0,
+    "installments": 36,
+    "gracePeriodDays": 45
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.installmentValue: isNumber
+  res.body.monthlyCetPct: isNumber
+}

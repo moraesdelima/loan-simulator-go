@@ -1,0 +1,27 @@
+meta {
+  name: POST /simulate — error: zero value
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/simulate
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "loanValue": 0,
+    "monthlyRatePct": 2.5,
+    "installments": 12
+  }
+}
+
+assert {
+  res.status: eq 400
+}

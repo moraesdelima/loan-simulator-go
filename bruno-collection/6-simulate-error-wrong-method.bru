@@ -1,0 +1,15 @@
+meta {
+  name: GET /simulate — error: wrong method
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/simulate
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 405
+}
